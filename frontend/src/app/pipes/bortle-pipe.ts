@@ -6,13 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BortlePipe implements PipeTransform {
   transform(value: number): string {
-    const descriptions: { [key: number]: string } = {
+    const scales: { [key: number]: string } = {
       1: '✨ Pristine Dark Sky',
-      3: '🏡 Rural/Suburban Transition',
+      3: '🏡 Rural Sky',
       5: '🌆 Suburban Sky',
-      7: '🏙️ Suburban/Urban Transition',
+      7: '🏙️ Bright Suburban',
       9: '🏮 Inner-City Sky'
     };
-    return descriptions[value] || '🌌 Average Sky';
+    return scales[value] || '🌌 Average Sky';
   }
 }
