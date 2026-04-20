@@ -1,0 +1,17 @@
+.hero-section {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(to bottom, #0b0d17, #1b1e2e);
+  color: white;
+  border-radius: 15px;
+}
+
+button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}

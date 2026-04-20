@@ -1,1 +1,15 @@
 <p>home works!</p>
+<div class="hero-section">
+  <h1>🌌 CosmicLog: DeepSky Journal</h1>
+  <p>Track your sightings from the Messier Catalog and beyond.</p>
+  
+  <div class="action-buttons">
+    <button routerLink="/catalog">View Star Catalog</button>
+    <button routerLink="/register">Start Logging</button>
+  </div>
+</div>
+
+<div class="quick-stats">
+  <h3>Current Sky Condition</h3>
+  <p>Local Light Pollution: {{ 5 | bortle }}</p> 
+</div>
