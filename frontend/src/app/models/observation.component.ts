@@ -1,9 +1,17 @@
-export interface IObservation {
-  _id?: string;
-  title: string;
-  description: string;
-  date: string;
-  location: string;
-  bortleScale?: number;
-  imageUrl?: string;
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IObservation } from '../models/observation'; // This path was wrong on GitHub
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ObservationService {
+  private apiUrl = 'http://localhost:3000/api/observations';
+
+  constructor(private http: HttpClient) { }
+
+  getObservations(): Observable<IObservation[]> {
+    return this.http.get<IObservation[]>(this.apiUrl);
+  }
 }
