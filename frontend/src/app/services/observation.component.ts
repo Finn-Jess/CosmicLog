@@ -6,7 +6,7 @@ import { IObservation } from '../models/observation'; // Checked: folder is 'mod
 @Injectable({
   providedIn: 'root'
 })
-export class ObservationService {
+export class ObservationServiceComponent {
   private apiUrl = 'http://localhost:3000/api/observations';
 
   constructor(private http: HttpClient) { }

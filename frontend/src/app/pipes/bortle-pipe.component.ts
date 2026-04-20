@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'bortle',
   standalone: true
 })
-export class BortlePipe implements PipeTransform {
+export class BortlePipeComponent implements PipeTransform {
   transform(value: number): string {
     const scales: { [key: number]: string } = {
       1: '✨ Pristine',

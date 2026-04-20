@@ -1,7 +1,7 @@
 export interface ICelestialObject {
-  _id: string;
   name: string;
-  commonName: string; 
-  catalogId: string;  
-  type: 'Galaxy' | 'Nebula' | 'Star Cluster' | 'Planet';
+  type: string; // galaxy, star, planet etc.
+  ra?: number;
+  dec?: number;
+  magnitude?: number;
 }
