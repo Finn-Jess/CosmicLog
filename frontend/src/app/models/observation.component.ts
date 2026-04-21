@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IObservation } from '../models/observation'; // This path was wrong on GitHub
+import { IObservation } from './observation'; // This path was wrong on GitHub
 
 @Injectable({
   providedIn: 'root'
