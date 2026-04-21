@@ -1,15 +1,16 @@
-<p>home works!</p>
-<div class="hero-section">
-  <h1>🌌 CosmicLog: DeepSky Journal</h1>
-  <p>Track your sightings from the Messier Catalog and beyond.</p>
-  
-  <div class="action-buttons">
-    <button routerLink="/catalog">View Star Catalog</button>
-    <button routerLink="/register">Start Logging</button>
+<div class="hero-wrapper">
+  <div class="hero-main">
+    <h1 class="title">CosmicLog: DeepSky Journal</h1>
+    <p class="tagline">Track your sightings from the Messier Catalog and beyond.</p>
+    
+    <div class="btn-group">
+      <button class="btn-primary" routerLink="/catalog">View Star Catalog</button>
+      <button class="btn-outline" routerLink="/register">Start Logging</button>
+    </div>
   </div>
-</div>
 
-<div class="quick-stats">
-  <h3>Current Sky Condition</h3>
-  <p>Local Light Pollution: {{ 5 | bortle }}</p> 
+  <div class="sky-footer">
+    <span class="label">CURRENT SKY CONDITION</span>
+    <p class="status">Local Light Pollution: 🏙️ Suburban</p>
+  </div>
 </div>
