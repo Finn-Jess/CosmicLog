@@ -1,0 +1,38 @@
+<div class="auth-container">
+  <div class="auth-card log-card">
+    <div class="auth-header">
+      <h1 class="glow-text">Record Sighting</h1>
+      <p>Enter observation details into the celestial journal.</p>
+    </div>
+
+    <form class="auth-form" (ngSubmit)="submitLog()">
+      <div class="input-group">
+        <label>Target Object</label>
+        <input type="text" name="objectName" [(ngModel)]="newLog.objectName" placeholder="e.g. M31 Andromeda" required>
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label>Date</label>
+          <input type="date" name="date" [(ngModel)]="newLog.date" required>
+        </div>
+        <div class="input-group">
+          <label>Location</label>
+          <input type="text" name="location" [(ngModel)]="newLog.location" placeholder="Pernik, Bulgaria">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Equipment</label>
+        <input type="text" name="equipment" [(ngModel)]="newLog.equipment" placeholder="8-inch Newtonian">
+      </div>
+
+      <div class="input-group">
+        <label>Notes</label>
+        <textarea name="notes" [(ngModel)]="newLog.notes" placeholder="Very clear skies..."></textarea>
+      </div>
+
+      <button type="submit" class="auth-btn">Initialize Log Entry</button>
+    </form>
+  </div>
+</div>

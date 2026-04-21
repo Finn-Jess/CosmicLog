@@ -1,6 +1,9 @@
-export interface IObservation {
-  id: string;
-  object: string;
+export interface Observation {
+  id?: string;
+  userId: string;
+  objectName: string;
   date: string;
-  notes?: string;
+  location: string;
+  equipment: string;
+  notes: string;
 }

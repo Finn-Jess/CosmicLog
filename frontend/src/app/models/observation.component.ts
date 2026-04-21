@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IObservation } from './observation'; // This path was wrong on GitHub
+import { Observation } from './observation'; // This path was wrong on GitHub
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ObservationService {
 
   constructor(private http: HttpClient) { }
 
-  getObservations(): Observable<IObservation[]> {
-    return this.http.get<IObservation[]>(this.apiUrl);
+  getObservations(): Observable<Observation[]> {
+    return this.http.get<Observation[]>(this.apiUrl);
   }
 }

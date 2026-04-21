@@ -1,1 +1,31 @@
-<p>register works!</p>
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1 class="glow-text">Join the Crew</h1>
+      <p>Create your profile to start logging sightings.</p>
+    </div>
+
+    <form class="auth-form" (ngSubmit)="onRegister()">
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" [(ngModel)]="userData.username" placeholder="StarGazer_77" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" name="email" [(ngModel)]="userData.email" placeholder="commander@nasa.gov" required>
+      </div>
+
+      <div class="input-group">
+        <label>Access Key (Password)</label>
+        <input type="password" name="password" [(ngModel)]="userData.password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="auth-btn">Initialize Account</button>
+    </form>
+
+    <div class="auth-footer">
+      <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    </div>
+  </div>
+</div>

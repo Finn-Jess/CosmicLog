@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1 class="glow-text">Welcome Back</h1>
+      <p>Enter your credentials to access your star logs.</p>
+    </div>
+
+    <form class="auth-form" (ngSubmit)="onLogin()">
+      
+      <div class="input-group">
+        <label>Email</label>
+        <input 
+          type="email" 
+          name="email" 
+          [(ngModel)]="loginData.email" 
+          placeholder="commander@nasa.gov" 
+          required
+        >
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input 
+          type="password" 
+          name="password" 
+          [(ngModel)]="loginData.password" 
+          placeholder="••••••••" 
+          required
+        >
+      </div>
+
+      <button type="submit" class="auth-btn">Login</button>
+      
+      <div class="auth-footer">
+        <p>New here? <a routerLink="/register">Join the Crew</a></p>
+      </div>
+    </form>
+  </div>
+</div>

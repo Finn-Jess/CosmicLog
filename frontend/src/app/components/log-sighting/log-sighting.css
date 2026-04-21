@@ -4,16 +4,19 @@
   align-items: center;
   justify-content: center;
   background: radial-gradient(circle at center, #161b33 0%, #05070a 100%);
-  padding: 20px;
+  padding: 40px 20px;
+}
+
+.log-card {
+  max-width: 650px;
 }
 
 .auth-card {
   width: 100%;
-  max-width: 450px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
-  padding: 50px;
+  padding: 40px;
   border-radius: 32px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
@@ -25,22 +28,27 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  margin: 0;
 }
 
 .auth-header p {
   text-align: center;
   color: #94a3b8;
-  margin: 10px 0 40px 0;
+  margin: 10px 0 30px 0;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .input-group {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #4f46e5;
@@ -48,7 +56,7 @@
   margin-bottom: 8px;
 }
 
-.input-group input {
+.input-group input, .input-group textarea {
   width: 100%;
   padding: 14px 20px;
   background: rgba(255, 255, 255, 0.05);
@@ -57,12 +65,11 @@
   color: white;
   font-size: 1rem;
   outline: none;
-  transition: all 0.3s;
 }
 
-.input-group input:focus {
-  border-color: #4f46e5;
-  background: rgba(255, 255, 255, 0.08);
+.input-group textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .auth-btn {
@@ -73,30 +80,12 @@
   border: none;
   border-radius: 12px;
   font-weight: 700;
-  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s;
-  margin-top: 10px;
 }
 
 .auth-btn:hover {
   background: #6366f1;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
-}
-
-.auth-footer {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.auth-footer p {
-  color: #94a3b8;
-  font-size: 0.9rem;
-}
-
-.auth-footer a {
-  color: #818cf8;
-  text-decoration: none;
-  font-weight: 600;
 }
