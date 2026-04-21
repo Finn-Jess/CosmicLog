@@ -1,41 +1,42 @@
-<div class="details-container">
-  <div class="back-nav">
-    <a routerLink="/catalog">← Back to Catalog</a>
-  </div>
+<div class="details-view" *ngIf="objectData">
+  <nav class="back-nav">
+    <a routerLink="/catalog" class="back-link">← Back to Star Catalog</a>
+  </nav>
 
-  <div class="details-card">
-    <div class="header-info">
-      <span class="m-id">M31</span>
-      <h1>Andromeda Galaxy</h1>
-      <p class="constellation">Constellation: <strong>Andromeda</strong></p>
+  <div class="details-glass-card">
+    <div class="details-header">
+      <span class="m-badge">{{ objectData.mId }}</span>
+      <h1 class="glow-title">{{ objectData.name }}</h1>
+      <p class="constellation-tag">Constellation: <span>{{ objectData.constellation }}</span></p>
     </div>
 
-    <div class="stats-grid">
-      <div class="stat-item">
-        <label>Type</label>
-        <span>Spiral Galaxy</span>
+    <div class="spec-grid">
+      <div class="spec-box">
+        <label>Object Type</label>
+        <span class="value">{{ objectData.type }}</span>
       </div>
-      <div class="stat-item">
-        <label>Magnitude</label>
-        <span>3.44</span>
+      <div class="spec-box">
+        <label>Apparent Magnitude</label>
+        <span class="value">{{ objectData.magnitude }}</span>
       </div>
-      <div class="stat-item">
+      <div class="spec-box">
         <label>Distance</label>
-        <span>2.5 Million Light Years</span>
-      </div>
-      <div class="stat-item">
-        <label>Right Ascension</label>
-        <span>00h 42.7m</span>
+        <span class="value">{{ objectData.distance }}</span>
       </div>
     </div>
 
-    <div class="description">
-      <h2>Description</h2>
-      <p>The Andromeda Galaxy is a symmetric spiral galaxy and the nearest major galaxy to the Milky Way. It is visible to the naked eye under dark skies.</p>
+    <div class="info-section">
+      <h2>Observation Notes</h2>
+      <p>{{ objectData.description }}</p>
     </div>
 
-    <div class="actions">
-      <button class="log-btn">Add to Personal Log</button>
+    <div class="details-actions">
+      <button class="action-btn log-btn">Add to My Observation Log</button>
     </div>
   </div>
+</div>
+
+<div class="details-view" *ngIf="!objectData">
+    <h1 class="glow-title">Object Not Found</h1>
+    <a routerLink="/catalog" class="back-link">Return to Catalog</a>
 </div>

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { BortlePipeComponent } from '../../pipes/bortle-pipe.component';
+import { RouterLink } from '@angular/router'; // Must be imported
 
 @Component({
   selector: 'app-home',
-  imports: [BortlePipeComponent],
+  standalone: true,
+  imports: [RouterLink], // Must be included in imports
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrl: './home.css'
 })
 export class HomeComponent {}
