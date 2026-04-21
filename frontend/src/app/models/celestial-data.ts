@@ -39,5 +39,35 @@ export const CELESTIAL_DATA: Record<string, CelestialObject> = {
     magnitude: '1.6',
     distance: '444 ly',
     description: 'Also known as the Seven Sisters, this is a prominent open star cluster containing middle-aged, hot blue stars.'
+  },
+  'm57': {
+    id: 'm57',
+    mId: 'M57',
+    name: 'Ring Nebula',
+    type: 'Planetary Nebula',
+    constellation: 'Lyra',
+    magnitude: '8.8',
+    distance: '2,300 ly',
+    description: 'A planetary nebula with a distinctive ring shape, formed from the outer layers of a dying star.'
+  },
+  'm51': {
+    id: 'm51',
+    mId: 'M51',
+    name: 'Whirlpool Galaxy',
+    type: 'Spiral Galaxy',
+    constellation: 'Canes Venatici',
+    magnitude: '8.4',
+    distance: '23 Million ly',
+    description: 'A grand-design spiral galaxy interacting with a smaller companion galaxy, NGC 5195.'
+  },
+  'm13': {
+    id: 'm13',
+    mId: 'M13',
+    name: 'Hercules Cluster',
+    type: 'Globular Cluster',
+    constellation: 'Hercules',
+    magnitude: '5.8',
+    distance: '22,200 ly',
+    description: 'One of the brightest globular clusters in the northern sky, containing hundreds of thousands of stars.'
   }
 };

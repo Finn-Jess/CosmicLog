@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CelestialObject } from '../../models/celestial-object';
 
 @Component({
@@ -24,6 +25,8 @@ export class CatalogComponent implements OnInit {
 
   filteredObjects: CelestialObject[] = [];
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     // Start by showing all stars in the sky
     this.filteredObjects = this.allObjects;
@@ -38,5 +41,9 @@ export class CatalogComponent implements OnInit {
     this.filteredObjects = this.allObjects.filter(obj =>
       obj.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+  }
+
+  viewData(obj: CelestialObject) {
+    this.router.navigate(['/details', obj.id]);
   }
 }
