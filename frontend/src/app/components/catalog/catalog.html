@@ -1,72 +1,28 @@
-<div class="catalog-view">
-  <div class="catalog-header">
-    <h1 class="glow-text">Celestial Objects</h1>
-    <p>Discover objects from the Messier and NGC catalogs.</p>
+<div class="catalog-container">
+  <h1 class="glow-text">Celestial Objects</h1>
+  <p class="subtitle">Discover objects from the Messier and NGC catalogs.</p>
+
+  <div class="search-section">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      (input)="filterResults()" 
+      placeholder="Search by name (e.g. Andromeda)..."
+      class="search-bar"
+    >
   </div>
-  
-  <div class="search-bar">
-    <input type="text" placeholder="Search by M-number or name..." class="search-input">
-  </div>
 
-  <div class="object-grid">
-    <div class="star-card">
+  <div class="objects-grid">
+    <div class="object-card" *ngFor="let obj of filteredObjects">
       <div class="card-header">
-        <span class="m-id">M31</span>
-        <span class="type-tag">Galaxy</span>
+        <span>{{ obj.id | uppercase }}</span>
+        <span>{{ obj.type | uppercase }}</span>
       </div>
-      <h2>Andromeda</h2>
-      <p class="constellation-label">Andromeda Galaxy</p>
-      <button class="view-btn" [routerLink]="['/details', 'm31']">View Data</button>
-    </div>
-
-    <div class="star-card">
-      <div class="card-header">
-        <span class="m-id">M42</span>
-        <span class="type-tag">Nebula</span>
-      </div>
-      <h2>Orion Nebula</h2>
-      <p class="constellation-label">Orion</p>
-      <button class="view-btn" [routerLink]="['/details', 'm42']">View Data</button>
-    </div>
-
-    <div class="star-card">
-      <div class="card-header">
-        <span class="m-id">M45</span>
-        <span class="type-tag">Star Cluster</span>
-      </div>
-      <h2>Pleiades</h2>
-      <p class="constellation-label">Taurus</p>
-      <button class="view-btn" [routerLink]="['/details', 'm45']">View Data</button>
-    </div>
-
-    <div class="star-card">
-      <div class="card-header">
-        <span class="m-id">M57</span>
-        <span class="type-tag">Planetary Nebula</span>
-      </div>
-      <h2>Ring Nebula</h2>
-      <p class="constellation-label">Lyra</p>
-      <button class="view-btn" [routerLink]="['/details', 'm57']">View Data</button>
-    </div>
-
-    <div class="star-card">
-      <div class="card-header">
-        <span class="m-id">M51</span>
-        <span class="type-tag">Galaxy</span>
-      </div>
-      <h2>Whirlpool Galaxy</h2>
-      <p class="constellation-label">Canes Venatici</p>
-      <button class="view-btn" [routerLink]="['/details', 'm51']">View Data</button>
-    </div>
-
-    <div class="star-card">
-      <div class="card-header">
-        <span class="m-id">M13</span>
-        <span class="type-tag">Globular Cluster</span>
-      </div>
-      <h2>Hercules Cluster</h2>
-      <p class="constellation-label">Hercules</p>
-      <button class="view-btn" [routerLink]="['/details', 'm13']">View Data</button>
+      
+      <h3>{{ obj.name }}</h3>
+      <p class="constellation">{{ obj.constellation }}</p>
+      
+      <button class="view-btn">View Data</button>
     </div>
   </div>
 </div>

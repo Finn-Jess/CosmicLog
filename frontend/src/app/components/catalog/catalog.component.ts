@@ -1,10 +1,42 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CelestialObject } from '../../models/celestial-object';
 
 @Component({
   selector: 'app-catalog',
-  imports: [RouterLink],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './catalog.html',
-  styleUrl: './catalog.css',
+  styleUrl: './catalog.css'
 })
-export class CatalogComponent {}
+export class CatalogComponent implements OnInit {
+  searchTerm: string = '';
+  
+  allObjects: CelestialObject[] = [
+    { id: 'm31', name: 'Andromeda', type: 'Galaxy', constellation: 'Andromeda Galaxy' },
+    { id: 'm42', name: 'Orion Nebula', type: 'Nebula', constellation: 'Orion' },
+    { id: 'm45', name: 'Pleiades', type: 'Star Cluster', constellation: 'Taurus' },
+    { id: 'm57', name: 'Ring Nebula', type: 'Planetary Nebula', constellation: 'Lyra' },
+    { id: 'm51', name: 'Whirlpool Galaxy', type: 'Galaxy', constellation: 'Canes Venatici' },
+    { id: 'm13', name: 'Hercules Cluster', type: 'Globular Cluster', constellation: 'Hercules' }
+  ];
+
+  filteredObjects: CelestialObject[] = [];
+
+  ngOnInit() {
+    // Start by showing all stars in the sky
+    this.filteredObjects = this.allObjects;
+  }
+
+  filterResults() {
+    if (!this.searchTerm) {
+      this.filteredObjects = this.allObjects;
+      return;
+    }
+
+    this.filteredObjects = this.allObjects.filter(obj =>
+      obj.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+}

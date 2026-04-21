@@ -1,7 +1,6 @@
-export interface ICelestialObject {
+export interface CelestialObject {
+  id: string;
   name: string;
-  type: string; // galaxy, star, planet etc.
-  ra?: number;
-  dec?: number;
-  magnitude?: number;
+  type: string;
+  constellation: string;
 }

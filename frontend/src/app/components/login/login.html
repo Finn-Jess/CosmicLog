@@ -8,12 +8,12 @@
     <form class="auth-form" (ngSubmit)="onLogin()">
       
       <div class="input-group">
-        <label>Email</label>
+        <label>Username</label>
         <input 
-          type="email" 
-          name="email" 
-          [(ngModel)]="loginData.email" 
-          placeholder="commander@nasa.gov" 
+          type="text" 
+          name="username" 
+          [(ngModel)]="loginData.username" 
+          placeholder="commander" 
           required
         >
       </div>

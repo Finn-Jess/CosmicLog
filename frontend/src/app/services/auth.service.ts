@@ -6,16 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  // This MUST match the port in your server.js (3000)
-  private apiUrl = 'http://localhost:3000/api/auth'; 
+  // Your server.js is listening on port 3000
+  private apiUrl = 'http://localhost:3000/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  register(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, userData);
+  signup(user: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/register`, user);
   }
 
   login(credentials: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
+    return this.http.post(`${this.apiUrl}/auth/login`, credentials);
   }
 }
