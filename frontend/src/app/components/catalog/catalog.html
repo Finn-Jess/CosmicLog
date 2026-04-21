@@ -1,1 +1,33 @@
-<p>catalog works!</p>
+<div class="catalog-page">
+  <header>
+    <h1>🔭 Deep Sky Catalog</h1>
+    <p>Viewing the Messier Objects</p>
+  </header>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search by M-number or name..." class="search-input">
+  </div>
+
+  <div class="object-grid">
+    <div class="object-card">
+      <div class="object-tag">Galaxy</div>
+      <h3>M31</h3>
+      <p class="object-name">Andromeda Galaxy</p>
+      <button [routerLink]="['/details', 'm31']" class="view-btn">View Data</button>
+    </div>
+
+    <div class="object-card">
+      <div class="object-tag">Nebula</div>
+      <h3>M42</h3>
+      <p class="object-name">Orion Nebula</p>
+      <button [routerLink]="['/details', 'm42']" class="view-btn">View Data</button>
+    </div>
+
+    <div class="object-card">
+      <div class="object-tag">Star Cluster</div>
+      <h3>M45</h3>
+      <p class="object-name">Pleiades</p>
+      <button [routerLink]="['/details', 'm45']" class="view-btn">View Data</button>
+    </div>
+  </div>
+</div>
